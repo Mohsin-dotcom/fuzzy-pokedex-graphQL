@@ -37,9 +37,9 @@
     }
   },
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }],
+    "prettier/prettier": ["warn", { "singleQuote": false }],
     "linebreak-style": ["error", "unix"],
-    "quotes": ["warn", "single", { "avoidEscape": true }],
+    // "quotes": ["warn", "single", { "avoidEscape": true }],
     "semi": ["error", "always"],
     "no-trailing-spaces": "error",
     "no-console": "error",
