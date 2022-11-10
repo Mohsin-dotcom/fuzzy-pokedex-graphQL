@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Pokemon from "components/Pokemon/Index";
 import Favorite from "components/Favorites/Index";
+import PageNotFound from "components/PageNotFound/Index";
 
 function App() {
   const styles = {
@@ -30,6 +31,7 @@ function App() {
             <Route path="/" element={<Navigate replace to="/pokedex" />} />
             <Route path="/pokedex" element={<Pokemon />} />
             <Route path="/pokedex/favorites" element={<Favorite />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
       </Container>
