@@ -3,8 +3,8 @@ import { default_pokemon_request_param } from "./defaultParams";
 
 //Get pokemon list
 export const GET_POKEMONS = gql`
-  query {
-    allPokemon(limit: 10, filter: true) {
+  query ($limit: Int!) {
+    allPokemon(limit: $limit, filter: true) {
       id
       name
       types {
