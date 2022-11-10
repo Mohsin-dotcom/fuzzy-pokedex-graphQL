@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+## fuzzy-pokedex-graphQL
+Clone the project and please run `npm install` <br/>
+Then run `npm start` in terminal and the project should start in the browser
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<li>Project has two basic URL</li>
+<li>/pokedex </li>
+<li> /pokedex/favorites</li>
+<li>custom favicon </li>
+<li>user can save the pokemon </li>
+<li> user can visit /pokedex/favorites and see their favorite pokemons</li>
+<li>user can search the pokemon and apply filters on it </li>
+<li>default pagination is of 15 pokemons at first request </li>
+<li>I have tried to keep the project mobile friendly but any suggestions are welcomed. </li>
 
 ## Available Scripts
 
