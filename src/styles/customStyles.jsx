@@ -286,4 +286,10 @@ export const layoutStyles = {
       backgroundColor: "#da471b",
     },
   },
+  SearchImg: {
+    position: "absolute",
+    top: "0px",
+    left: "190px",
+    padding: "10px",
+  },
 };

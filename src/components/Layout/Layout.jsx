@@ -3,11 +3,14 @@ import Select from "react-select";
 import { layoutStyles, sortingStyles } from "../../styles/customStyles";
 import { nameAscending, nameDescending } from "utils/utils";
 import Filters from "./Filters/Index";
+import { Icon } from "@iconify/react";
+import searchOutlined from "@iconify/icons-ant-design/search-outlined";
 
 const Layout = ({
   search,
   setSearch,
   pokemonList,
+  handleSearch,
   setPokemonList,
   handleResetSearch,
   actionOnPressingEnterKey,
@@ -47,13 +50,23 @@ const Layout = ({
               <Typography sx={layoutStyles.SearchText}>
                 Search Pokemons:
               </Typography>
-              <input
-                name="search"
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
-                onKeyPress={actionOnPressingEnterKey}
-                placeholder={"Search pokemon"}
-              />
+              <div style={{ position: "relative" }}>
+                <input
+                  name="search"
+                  value={search}
+                  onChange={(event) => setSearch(event.target.value)}
+                  onKeyPress={actionOnPressingEnterKey}
+                  placeholder={"Search pokemon"}
+                />
+                <Box onClick={handleSearch}>
+                  <Icon
+                    height="40"
+                    width="40"
+                    icon={searchOutlined}
+                    style={layoutStyles.SearchImg}
+                  />
+                </Box>
+              </div>
             </Box>
             {search != "" && (
               <Button sx={layoutStyles.ResetButton} onClick={handleResetSearch}>
