@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 
 const Favorite = () => {
   const [favorite, setFavorite] = useState(false);
-  const [favortePokemonList, setFavortePokemonList] = useState([]);
+  const [favoritePokemonList, setFavoritePokemonList] = useState([]);
 
   const getFavoritePokemons = () => {
     let favoritesList = JSON.parse(localStorage.getItem("favoritePokemons"));
-    setFavortePokemonList(favoritesList);
+    setFavoritePokemonList(favoritesList);
   };
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Favorite = () => {
         <Typography sx={favoritePokemonStyles.Heading}>Pokedex</Typography>
         {/* Favorite pokemons container */}
         <Box sx={favoritePokemonStyles.PokemonContainer}>
-          {favortePokemonList?.length > 0 && (
+          {favoritePokemonList?.length > 0 && (
             <Typography sx={favoritePokemonStyles.FavoriteHeading}>
               Your Favourites:
             </Typography>
@@ -30,8 +30,8 @@ const Favorite = () => {
         </Box>
         <Box sx={favoritePokemonStyles.BoxCard}>
           {/* Card */}
-          {favortePokemonList?.length > 0 &&
-            favortePokemonList?.map((item, index) => (
+          {favoritePokemonList?.length > 0 &&
+            favoritePokemonList?.map((item, index) => (
               <Card
                 pokemon={item}
                 favorite={favorite}
@@ -41,7 +41,7 @@ const Favorite = () => {
             ))}
         </Box>
 
-        {favortePokemonList.length === 0 && (
+        {favoritePokemonList.length === 0 && (
           <Typography sx={favoritePokemonStyles.NoMoreFavoriesTitle}>
             No favourites found.
           </Typography>

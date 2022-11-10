@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 import heartIcon from "@iconify/icons-akar-icons/heart";
 import heartFilled from "@iconify/icons-ant-design/heart-filled";
 import { cardStyles } from "../../styles/customStyles";
 
 const Card = ({ pokemon, favorite, setFavorite }) => {
-  const [favoritePokemonList, setFavoritePokemonList] = useState();
+  const [favoritePokemonList, setFavoritePokemonList] = useState([]);
 
   useEffect(() => {
     // get favorite pokemon list from local storage on initial render
