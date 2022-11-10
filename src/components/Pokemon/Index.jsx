@@ -30,13 +30,21 @@ const Pokemon = () => {
     setPokemonList(data?.allPokemon);
   };
 
+  const handleSearch = () => {
+    let filteredItem = data?.allPokemon?.filter((item) =>
+      item.name.toLowerCase().includes(search.trim().toLowerCase())
+    );
+    setPokemonList(filteredItem);
+  };
+
   const actionOnPressingEnterKey = (event) => {
+    //enter key pressed
     if (event.charCode === 13) {
       event.preventDefault();
-      let filteredItem = data?.allPokemon?.filter((item) =>
-        item.name.toLowerCase().includes(search.trim().toLowerCase())
-      );
-      setPokemonList(filteredItem);
+      handleSearch();
+    } else if (event.charCode === 8 && search === "") {
+      //user pressed the backspace key and all characters of search term are deleted
+      handleResetSearch();
     }
   };
 
@@ -51,6 +59,7 @@ const Pokemon = () => {
           search={search}
           setSearch={setSearch}
           pokemonList={pokemonList}
+          handleSearch={handleSearch}
           setPokemonList={setPokemonList}
           handleResetSearch={handleResetSearch}
           actionOnPressingEnterKey={actionOnPressingEnterKey}
@@ -71,7 +80,7 @@ const Pokemon = () => {
             <></>
           )}
         </Box>
-        {pokemonList?.length > 0 && (
+        {pokemonList?.length > 14 && search == "" && (
           <Button
             variant="contained"
             onClick={() => setPaginationLimit(paginationLimit + 15)}
