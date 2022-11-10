@@ -12,7 +12,7 @@ const Pokemon = () => {
   const [favorite, setFavorite] = useState(false);
   const [paginationLimit, setPaginationLimit] = useState(15);
 
-  const { data, loading } = useQuery(GET_POKEMONS, {
+  const { data, error, loading } = useQuery(GET_POKEMONS, {
     variables: {
       limit: paginationLimit || paginationLimit !== null,
       // filter: true,
@@ -40,10 +40,11 @@ const Pokemon = () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
 
   return (
-    <Box sx={pokemonStyles.Background}>
+    <Box sx={pokemonStyles.Background} data-testid="result">
       <Container sx={pokemonStyles.BackgroundContainer}>
         {/* Header */}
         <Layout
