@@ -1,4 +1,3 @@
-import "./App.css";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import {
@@ -9,8 +8,6 @@ import {
 } from "react-router-dom";
 import Pokemon from "components/Pokemon/Index";
 import Favorite from "components/Favorites/Index";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const styles = {
@@ -35,7 +32,6 @@ function App() {
             <Route path="/pokedex/favorites" element={<Favorite />} />
           </Routes>
         </Router>
-        <ToastContainer />
       </Container>
     </Box>
   );
