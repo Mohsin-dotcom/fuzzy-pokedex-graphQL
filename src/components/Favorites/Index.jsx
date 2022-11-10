@@ -40,13 +40,12 @@ const Favorite = () => {
               />
             ))}
         </Box>
-
         {(favoritePokemonList?.length === 0 ||
           favoritePokemonList === null) && (
-            <Typography sx={favoritePokemonStyles.NoMoreFavoriesTitle}>
-              No favourites found.
-            </Typography>
-          )}
+          <Typography sx={favoritePokemonStyles.NoMoreFavoriesTitle}>
+            No favourites found.
+          </Typography>
+        )}
       </Container>
     </Box>
   );

@@ -16,7 +16,10 @@ const Filters = ({ setPokemonList }) => {
 
   const { data: allTypesData } = useQuery(GET_POKEMON_TYPES);
   const { data: allAbilitiesData } = useQuery(GET_POKEMON_ABILITIES);
-  const [getAbilityById, { data: abilityByIdData }] = useLazyQuery(GET_ABILITY_BY_ID);
+
+  const [getAbilityById, { data: abilityByIdData }] =
+    useLazyQuery(GET_ABILITY_BY_ID);
+
   const [getTypeById, { data: typeByIdData }] = useLazyQuery(GET_TYPE_BY_ID);
 
   useEffect(() => {
