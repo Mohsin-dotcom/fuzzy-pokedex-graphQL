@@ -64,9 +64,6 @@ const Pokemon = () => {
           handleResetSearch={handleResetSearch}
           actionOnPressingEnterKey={actionOnPressingEnterKey}
         />
-        <div>
-          <a href="/pokedex/favorites">Favorites</a>
-        </div>
         {/* Pokemon cards container */}
         <Box sx={pokemonStyles.BoxCard}>
           {/* Card */}
