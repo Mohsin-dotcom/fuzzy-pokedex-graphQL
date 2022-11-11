@@ -5,6 +5,7 @@ import { pokemonStyles } from "styles/customStyles";
 import Layout from "components/Layout/Layout";
 import { useEffect, useState } from "react";
 import { GET_POKEMONS } from "services/gqlQueries";
+import { Link } from "react-router-dom";
 
 const Pokemon = () => {
   const [search, setSearch] = useState("");
@@ -64,6 +65,11 @@ const Pokemon = () => {
           handleResetSearch={handleResetSearch}
           actionOnPressingEnterKey={actionOnPressingEnterKey}
         />
+
+        <Box style={pokemonStyles.ViewFavorites}>
+          <Link to={"/pokedex/favorites"}>View Favorites</Link>
+        </Box>
+
         {/* Pokemon cards container */}
         <Box sx={pokemonStyles.BoxCard}>
           {/* Card */}

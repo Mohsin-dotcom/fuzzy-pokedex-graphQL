@@ -124,6 +124,12 @@ export const pokemonStyles = {
     px: 1,
     pb: 2,
   },
+  ViewFavorites: {
+    textAlign: "right",
+    width: "100%",
+    marginTop: 20,
+    marginRight: 15,
+  },
   BackgroundContainer: {
     display: "flex",
     justifyContent: "center",
@@ -140,7 +146,7 @@ export const pokemonStyles = {
     },
     justifyItems: { xs: "center", sm: "stretch" },
     width: "100%",
-    mt: 7,
+    // mt: 7,
   },
 };
 
