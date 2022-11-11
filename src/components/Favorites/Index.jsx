@@ -24,7 +24,7 @@ const Favorite = () => {
         <Box sx={favoritePokemonStyles.PokemonContainer}>
           {favoritePokemonList?.length > 0 && (
             <Typography sx={favoritePokemonStyles.FavoriteHeading}>
-              Your Favourites:
+              Your Favorites:
             </Typography>
           )}
         </Box>
@@ -40,11 +40,12 @@ const Favorite = () => {
               />
             ))}
         </Box>
-        {(favoritePokemonList?.length === 0 ||
-          favoritePokemonList === null) && (
+        {favoritePokemonList?.length === 0 || favoritePokemonList === null ? (
           <Typography sx={favoritePokemonStyles.NoMoreFavoriesTitle}>
-            No favourites found.
+            No favorites found.
           </Typography>
+        ) : (
+          <></>
         )}
       </Container>
     </Box>
